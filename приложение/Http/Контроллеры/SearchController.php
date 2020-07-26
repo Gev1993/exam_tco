@@ -15,7 +15,7 @@ class SearchController extends Controller
             redirect()->route('managements.index');
         }
 
-        $search = management::orWhere("name", "LIKE", "%{$search%}")->get();
+        $search = management::orWhere("name", "LIKE", "%{$search}%")->get();
 
 
         return view('search.results')->with('search', $search);
@@ -28,7 +28,7 @@ class SearchController extends Controller
             redirect()->route('products.index');
         }
 
-        $search = Product::orWhere("name", "LIKE", "%{$search%}")->get();
+        $search = Product::orWhere("name", "LIKE", "%{$search}%")->get();
 
 
         return view('search.results1')->with('search', $search);
