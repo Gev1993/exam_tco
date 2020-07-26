@@ -13,8 +13,9 @@
 
         @else
 
-        <table class="table table-hover table-dark">
+        
     @foreach($search as $searc)
+    <table class="table table-hover table-dark">
         <tr>
             <th>Name</th>
             <th>Details</th>
@@ -31,9 +32,10 @@
             <td>{{ $searc->status }}</td>
             <td>{{ $searc->description }}</td>
         </tr>
+         </table>
     @endforeach
 
-        </table>
+       
 
     @endif
 
