@@ -15,10 +15,10 @@ class SearchController extends Controller
             redirect()->route('managements.index');
         }
 
-        $users = management::orWhere("name", "LIKE", "%$search%")->get();
+        $search = management::orWhere("name", "LIKE", "%{$search%}")->get();
 
 
-        return view('search.results')->with('users', $users);
+        return view('search.results')->with('search', $search);
     }
 
     public function setResults(Request $request)
@@ -28,10 +28,10 @@ class SearchController extends Controller
             redirect()->route('products.index');
         }
 
-        $users = Product::orWhere("name", "LIKE", "%$search%")->get();
+        $search = Product::orWhere("name", "LIKE", "%{$search%}")->get();
 
 
-        return view('search.results1')->with('users', $users);
+        return view('search.results1')->with('search', $search);
     }
 
 }
